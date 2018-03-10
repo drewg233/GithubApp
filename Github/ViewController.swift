@@ -15,6 +15,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var searchTypeSegmentedControl: UISegmentedControl!
     
+    override func viewWillAppear(_ animated: Bool) {
+        setupView()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,13 +27,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.register(UINib(nibName: Constant.Nib.gitRepoTableViewCell, bundle: nil), forCellReuseIdentifier: Constant.ReuseId.gitRepoTableViewCell)
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 100
-        tableView.separatorStyle = .none
-        
+    }
+    
+    func setupView() {
+        // Nav Bar
         self.title = "GitHub Repos"
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
+        
+        // Segmented Controller
+        let font = UIFont.systemFont(ofSize: 15, weight: .bold)
+        searchTypeSegmentedControl.setTitleTextAttributes([NSAttributedStringKey.font: font], for: .normal)
     }
     
     @IBAction func searchButtonPressed(_ sender: Any) {

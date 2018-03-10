@@ -35,30 +35,38 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="34m-wH-sdj">
-                                <rect key="frame" x="20" y="79" width="260" height="30"/>
+                                <rect key="frame" x="20" y="79" width="225" height="30"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="azH-DQ-7mS">
-                                <rect key="frame" x="20" y="124" width="335" height="29"/>
+                                <rect key="frame" x="20" y="124" width="335" height="36"/>
+                                <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="Lmz-fY-1Uq"/>
+                                </constraints>
                                 <segments>
                                     <segment title="User"/>
                                     <segment title="Organization"/>
                                 </segments>
+                                <color key="tintColor" red="0.094117647058823528" green="0.090196078431372548" blue="0.2627450980392157" alpha="1" colorSpace="calibratedRGB"/>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0rF-S6-bcV">
-                                <rect key="frame" x="300" y="79" width="55" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0rF-S6-bcV">
+                                <rect key="frame" x="265" y="82.5" width="90" height="23"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="55" id="rEP-RJ-Ahd"/>
+                                    <constraint firstAttribute="width" constant="90" id="rEP-RJ-Ahd"/>
                                 </constraints>
-                                <state key="normal" title="Search"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
+                                <state key="normal" title="Search " image="SearchIcon">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
                                 <connections>
                                     <action selector="searchButtonPressed:" destination="Owa-9u-i29" eventType="touchUpInside" id="GV6-jF-5gB"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cHT-mI-D7y">
-                                <rect key="frame" x="0.0" y="167" width="375" height="500"/>
+                                <rect key="frame" x="0.0" y="174" width="375" height="493"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
@@ -101,4 +109,7 @@
             <point key="canvasLocation" x="458.39999999999998" y="-254.12293853073464"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="SearchIcon" width="23" height="23"/>
+    </resources>
 </document>

@@ -14,6 +14,7 @@ class GitRepo {
     var language: String?
     var forks: Int
     var stars: Int
+    var updatedAt: Date?
     
     init?(json: [String: Any]) {
         guard let name = json["name"] as? String,
@@ -32,6 +33,12 @@ class GitRepo {
         }
         if let language = json["language"] as? String {
             self.language = language
+        }
+        if let updatedAt = json["updated_at"] as? String {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ssZ"
+            let date = dateFormatter.date(from: updatedAt)
+            self.updatedAt = date
         }
     }
 }

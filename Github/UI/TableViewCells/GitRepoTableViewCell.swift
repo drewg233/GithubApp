@@ -11,11 +11,33 @@ import UIKit
 class GitRepoTableViewCell: UITableViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var starsLabel: UILabel!
+    @IBOutlet weak var forkLabel: UILabel!
+    @IBOutlet weak var updatedTimeLabel: UILabel!
     
     var gitRepo: GitRepo? {
         didSet {
-            if let name = gitRepo?.name {
-                nameLabel.text = name
+            guard let repo = gitRepo else {
+                return
+            }
+            
+            nameLabel.text = repo.name
+            starsLabel.text = "Stars: \(repo.stars)"
+            forkLabel.text = "Fork: \(repo.forks)"
+            
+            if let description = repo.description {
+                descriptionLabel.text = description
+            }
+            
+            if let lastUpdatedDate = repo.updatedAt {
+                let timeinterval = Date().timeIntervalSince(lastUpdatedDate)
+                
+                let formatter = DateComponentsFormatter()
+                formatter.unitsStyle = .abbreviated
+                if let time = formatter.string(from: timeinterval) {
+                    updatedTimeLabel.text = "Updated: \(time)"
+                }
             }
         }
     }
