@@ -18,6 +18,8 @@
 		B9AA8A492053A04C00CFBE31 /* GitRepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AA8A472053A04C00CFBE31 /* GitRepoTableViewCell.swift */; };
 		B9AA8A4A2053A04C00CFBE31 /* GitRepoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9AA8A482053A04C00CFBE31 /* GitRepoTableViewCell.xib */; };
 		B9AA8A4F2053B37900CFBE31 /* GitSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AA8A4E2053B37900CFBE31 /* GitSection.swift */; };
+		B9AA8A552053BEFC00CFBE31 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AA8A542053BEFC00CFBE31 /* DetailViewController.swift */; };
+		B9AA8A572053C09A00CFBE31 /* DefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AA8A562053C09A00CFBE31 /* DefaultButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		B9AA8A472053A04C00CFBE31 /* GitRepoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitRepoTableViewCell.swift; sourceTree = "<group>"; };
 		B9AA8A482053A04C00CFBE31 /* GitRepoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GitRepoTableViewCell.xib; sourceTree = "<group>"; };
 		B9AA8A4E2053B37900CFBE31 /* GitSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitSection.swift; sourceTree = "<group>"; };
+		B9AA8A542053BEFC00CFBE31 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		B9AA8A562053C09A00CFBE31 /* DefaultButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,7 @@
 			children = (
 				B9AA8A2D20539F3F00CFBE31 /* AppDelegate.swift */,
 				B9AA8A2F20539F3F00CFBE31 /* ViewController.swift */,
+				B9AA8A542053BEFC00CFBE31 /* DetailViewController.swift */,
 				B9AA8A3120539F3F00CFBE31 /* Main.storyboard */,
 				B9AA8A3420539F3F00CFBE31 /* Assets.xcassets */,
 				B9AA8A3620539F3F00CFBE31 /* LaunchScreen.storyboard */,
@@ -84,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				B9AA8A462053A03A00CFBE31 /* TableViewCells */,
+				B9AA8A582053C14E00CFBE31 /* Buttons */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -91,8 +97,7 @@
 		B9AA8A462053A03A00CFBE31 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
-				B9AA8A482053A04C00CFBE31 /* GitRepoTableViewCell.xib */,
-				B9AA8A472053A04C00CFBE31 /* GitRepoTableViewCell.swift */,
+				B9AA8A592053C15800CFBE31 /* GitRepoTableViewCell */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -112,6 +117,23 @@
 				B9AA8A4120539FE100CFBE31 /* API.swift */,
 			);
 			path = Singletons;
+			sourceTree = "<group>";
+		};
+		B9AA8A582053C14E00CFBE31 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				B9AA8A562053C09A00CFBE31 /* DefaultButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		B9AA8A592053C15800CFBE31 /* GitRepoTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				B9AA8A482053A04C00CFBE31 /* GitRepoTableViewCell.xib */,
+				B9AA8A472053A04C00CFBE31 /* GitRepoTableViewCell.swift */,
+			);
+			path = GitRepoTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +216,8 @@
 				B9AA8A2E20539F3F00CFBE31 /* AppDelegate.swift in Sources */,
 				B9AA8A4220539FE100CFBE31 /* API.swift in Sources */,
 				B9AA8A4020539FB300CFBE31 /* Constants.swift in Sources */,
+				B9AA8A572053C09A00CFBE31 /* DefaultButton.swift in Sources */,
+				B9AA8A552053BEFC00CFBE31 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

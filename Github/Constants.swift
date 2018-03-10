@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum SearchType {
     case organization
@@ -42,5 +43,13 @@ struct Constant {
     struct ErrorMessage {
         static let couldNotSerializeJson = "Oops couldn't serialize the response."
         static let noData = "Data was empty."
+    }
+    
+    struct Color {
+        static let blue = UIColor(red: 0.09, green: 0.09, blue: 0.26, alpha: 1.0)
+    }
+    
+    struct Segue {
+        static let goToDetails = "showGitRepoDetails"
     }
 }

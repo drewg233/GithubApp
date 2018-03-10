@@ -15,6 +15,8 @@ class GitRepo {
     var forks: Int
     var stars: Int
     var updatedAt: Date?
+    var avatarImageURL: String?
+    var repoURL: String?
     
     init?(json: [String: Any]) {
         guard let name = json["name"] as? String,
@@ -38,6 +40,14 @@ class GitRepo {
             dateFormatter.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ssZ"
             let date = dateFormatter.date(from: updatedAt)
             self.updatedAt = date
+        }
+        if let ownerData = json["owner"] as? [String: Any] {
+            if let avatarImageURL = ownerData["avatar_url"] as? String {
+                self.avatarImageURL = avatarImageURL
+            }
+        }
+        if let repoURL = json["html_url"] as? String {
+            self.repoURL = repoURL
         }
     }
 }

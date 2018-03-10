@@ -15,6 +15,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var searchTypeSegmentedControl: UISegmentedControl!
     
+    var selectedRepo: GitRepo?
     let loadingAlert = UIAlertController(title: nil, message: "Please wait..", preferredStyle: .alert)
     
     override func viewWillAppear(_ animated: Bool) {
@@ -95,6 +96,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == Constant.Segue.goToDetails) {
+            let vc = segue.destination as? DetailViewController
+            vc?.gitRepo = self.selectedRepo
+        }
+    }
 }
 
 extension ViewController {
@@ -115,5 +123,12 @@ extension ViewController {
         }
         
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let selectedRepo: GitRepo = APIShared.searchResults[indexPath.section].repos[indexPath.row] {
+            self.selectedRepo = selectedRepo
+            self.performSegue(withIdentifier: Constant.Segue.goToDetails, sender: nil)
+        }
     }
 }
