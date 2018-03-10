@@ -1,24 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9GN-6t-amu">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Navigation Controller-->
+        <scene sceneID="qrm-vY-hWa">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <navigationController id="9GN-6t-amu" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mgc-nt-oVF">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Owa-9u-i29" kind="relationship" relationship="rootViewController" id="fb7-M3-oef"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8H4-Fj-Fu0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-393" y="-254"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="zPs-dR-pFN">
+            <objects>
+                <viewController id="Owa-9u-i29" customClass="ViewController" customModule="GithubTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wl8-ag-dd2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="34m-wH-sdj">
+                                <rect key="frame" x="20" y="79" width="260" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="azH-DQ-7mS">
+                                <rect key="frame" x="20" y="124" width="335" height="29"/>
+                                <segments>
+                                    <segment title="User"/>
+                                    <segment title="Organization"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0rF-S6-bcV">
+                                <rect key="frame" x="300" y="79" width="55" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="55" id="rEP-RJ-Ahd"/>
+                                </constraints>
+                                <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="searchButtonPressed:" destination="Owa-9u-i29" eventType="touchUpInside" id="GV6-jF-5gB"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cHT-mI-D7y">
+                                <rect key="frame" x="0.0" y="167" width="375" height="500"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cHT-mI-D7y" firstAttribute="leading" secondItem="cvv-A3-bgo" secondAttribute="leading" id="FyP-ja-ht0"/>
+                            <constraint firstItem="34m-wH-sdj" firstAttribute="top" secondItem="cvv-A3-bgo" secondAttribute="top" constant="15" id="H6e-fX-GhY"/>
+                            <constraint firstItem="cvv-A3-bgo" firstAttribute="trailing" secondItem="azH-DQ-7mS" secondAttribute="trailing" constant="20" id="OOe-jE-MiG"/>
+                            <constraint firstItem="cvv-A3-bgo" firstAttribute="trailing" secondItem="0rF-S6-bcV" secondAttribute="trailing" constant="20" id="ZOR-eg-keg"/>
+                            <constraint firstItem="cHT-mI-D7y" firstAttribute="bottom" secondItem="cvv-A3-bgo" secondAttribute="bottom" id="e97-og-S5K"/>
+                            <constraint firstItem="azH-DQ-7mS" firstAttribute="top" secondItem="34m-wH-sdj" secondAttribute="bottom" constant="15" id="h5T-hK-JKC"/>
+                            <constraint firstItem="cHT-mI-D7y" firstAttribute="trailing" secondItem="cvv-A3-bgo" secondAttribute="trailing" id="kK3-gl-8KG"/>
+                            <constraint firstItem="cHT-mI-D7y" firstAttribute="top" secondItem="azH-DQ-7mS" secondAttribute="bottom" constant="15" id="kW5-ou-7zU"/>
+                            <constraint firstItem="34m-wH-sdj" firstAttribute="leading" secondItem="cvv-A3-bgo" secondAttribute="leading" constant="20" id="kvC-NX-b5z"/>
+                            <constraint firstItem="azH-DQ-7mS" firstAttribute="leading" secondItem="cvv-A3-bgo" secondAttribute="leading" constant="20" id="oVu-cI-Z5C"/>
+                            <constraint firstItem="0rF-S6-bcV" firstAttribute="centerY" secondItem="34m-wH-sdj" secondAttribute="centerY" id="r8k-Y8-8BD"/>
+                            <constraint firstItem="0rF-S6-bcV" firstAttribute="leading" secondItem="34m-wH-sdj" secondAttribute="trailing" constant="20" id="zet-LU-gCO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cvv-A3-bgo"/>
                     </view>
+                    <navigationItem key="navigationItem" id="48d-EV-2FY"/>
+                    <connections>
+                        <outlet property="searchButton" destination="0rF-S6-bcV" id="vim-Vd-XIP"/>
+                        <outlet property="searchDisplayController" destination="99T-Cw-CQP" id="Oc8-n0-yOB"/>
+                        <outlet property="searchTextField" destination="34m-wH-sdj" id="R0V-uQ-Koa"/>
+                        <outlet property="searchTypeSegmentedControl" destination="azH-DQ-7mS" id="6fl-xU-hpg"/>
+                        <outlet property="tableView" destination="cHT-mI-D7y" id="NS0-Rt-4wc"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5dp-0U-iyx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="99T-Cw-CQP">
+                    <connections>
+                        <outlet property="delegate" destination="Owa-9u-i29" id="qNH-xa-qMF"/>
+                        <outlet property="searchContentsController" destination="Owa-9u-i29" id="bCx-Iz-lRe"/>
+                        <outlet property="searchResultsDataSource" destination="Owa-9u-i29" id="Lfm-iz-chL"/>
+                        <outlet property="searchResultsDelegate" destination="Owa-9u-i29" id="djH-LA-pLy"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
+            <point key="canvasLocation" x="458.39999999999998" y="-254.12293853073464"/>
         </scene>
     </scenes>
 </document>

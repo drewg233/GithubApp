@@ -12,6 +12,11 @@
 		B9AA8A3320539F3F00CFBE31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9AA8A3120539F3F00CFBE31 /* Main.storyboard */; };
 		B9AA8A3520539F3F00CFBE31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9AA8A3420539F3F00CFBE31 /* Assets.xcassets */; };
 		B9AA8A3820539F3F00CFBE31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9AA8A3620539F3F00CFBE31 /* LaunchScreen.storyboard */; };
+		B9AA8A4020539FB300CFBE31 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AA8A3F20539FB300CFBE31 /* Constants.swift */; };
+		B9AA8A4220539FE100CFBE31 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AA8A4120539FE100CFBE31 /* API.swift */; };
+		B9AA8A4420539FFA00CFBE31 /* GitRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AA8A4320539FFA00CFBE31 /* GitRepo.swift */; };
+		B9AA8A492053A04C00CFBE31 /* GitRepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AA8A472053A04C00CFBE31 /* GitRepoTableViewCell.swift */; };
+		B9AA8A4A2053A04C00CFBE31 /* GitRepoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9AA8A482053A04C00CFBE31 /* GitRepoTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		B9AA8A3420539F3F00CFBE31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B9AA8A3720539F3F00CFBE31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B9AA8A3920539F3F00CFBE31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9AA8A3F20539FB300CFBE31 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B9AA8A4120539FE100CFBE31 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		B9AA8A4320539FFA00CFBE31 /* GitRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepo.swift; sourceTree = "<group>"; };
+		B9AA8A472053A04C00CFBE31 /* GitRepoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitRepoTableViewCell.swift; sourceTree = "<group>"; };
+		B9AA8A482053A04C00CFBE31 /* GitRepoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GitRepoTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +70,45 @@
 				B9AA8A3420539F3F00CFBE31 /* Assets.xcassets */,
 				B9AA8A3620539F3F00CFBE31 /* LaunchScreen.storyboard */,
 				B9AA8A3920539F3F00CFBE31 /* Info.plist */,
+				B9AA8A4C2053A08000CFBE31 /* Singletons */,
+				B9AA8A4B2053A06F00CFBE31 /* Models */,
+				B9AA8A452053A03300CFBE31 /* UI */,
+				B9AA8A3F20539FB300CFBE31 /* Constants.swift */,
 			);
 			path = Github;
+			sourceTree = "<group>";
+		};
+		B9AA8A452053A03300CFBE31 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				B9AA8A462053A03A00CFBE31 /* TableViewCells */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		B9AA8A462053A03A00CFBE31 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				B9AA8A482053A04C00CFBE31 /* GitRepoTableViewCell.xib */,
+				B9AA8A472053A04C00CFBE31 /* GitRepoTableViewCell.swift */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		B9AA8A4B2053A06F00CFBE31 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B9AA8A4320539FFA00CFBE31 /* GitRepo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B9AA8A4C2053A08000CFBE31 /* Singletons */ = {
+			isa = PBXGroup;
+			children = (
+				B9AA8A4120539FE100CFBE31 /* API.swift */,
+			);
+			path = Singletons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +172,7 @@
 			files = (
 				B9AA8A3820539F3F00CFBE31 /* LaunchScreen.storyboard in Resources */,
 				B9AA8A3520539F3F00CFBE31 /* Assets.xcassets in Resources */,
+				B9AA8A4A2053A04C00CFBE31 /* GitRepoTableViewCell.xib in Resources */,
 				B9AA8A3320539F3F00CFBE31 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,8 +184,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9AA8A492053A04C00CFBE31 /* GitRepoTableViewCell.swift in Sources */,
+				B9AA8A4420539FFA00CFBE31 /* GitRepo.swift in Sources */,
 				B9AA8A3020539F3F00CFBE31 /* ViewController.swift in Sources */,
 				B9AA8A2E20539F3F00CFBE31 /* AppDelegate.swift in Sources */,
+				B9AA8A4220539FE100CFBE31 /* API.swift in Sources */,
+				B9AA8A4020539FB300CFBE31 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
