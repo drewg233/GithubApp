@@ -13,7 +13,7 @@ let APIShared = API.shared
 class API {
     static let shared = API()
     
-    var searchResults = [GitRepo]()
+    var searchResults = [GitSection]()
     
     func search(by searchType: SearchType, for searchText: String, completion: @escaping (_ error: String?) -> ()) {
         let urlString = Constant.URL.search(by: searchType, for: searchText)
@@ -33,10 +33,32 @@ class API {
                         repos.append(gitRepo)
                     }
                 }
-                APIShared.searchResults = repos
+                APIShared.groupSearchResults(searchResults: repos)
             }
             completion(nil)
         }
+    }
+    
+    func groupSearchResults(searchResults: [GitRepo]) {
+        var sections = [GitSection]()
+        
+        // Group the repos by language
+        for searchResult in searchResults {
+            if let foundSectionWithLanguage: GitSection = sections.filter({ $0.language == searchResult.language }).first {
+                foundSectionWithLanguage.repos.append(searchResult)
+            } else {
+                let gitSection = GitSection(language: searchResult.language)
+                gitSection.repos.append(searchResult)
+                sections.append(gitSection)
+            }
+        }
+        
+        // In each group, sort by stars
+        for group in sections {
+            group.repos.sort(by: { $0.stars > $1.stars })
+        }
+        
+        APIShared.searchResults = sections
     }
     
     func makeCall(urlString: String, completion: @escaping (_ data: [[String: Any]]?, _ error: String?) -> ()) {
@@ -47,13 +69,16 @@ class API {
                     return
                 }
                 guard let data = data else {
-                    completion(nil, "Data was empty.")
+                    completion(nil, Constant.ErrorMessage.noData)
                     return
                 }
                 
                 do {
-                    let json = try JSONSerialization.jsonObject(with: data, options: []) as! [[String: Any]]
-                    completion(json, nil)
+                    if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [[String: Any]] {
+                        completion(json, nil)
+                    } else {
+                        completion(nil, Constant.ErrorMessage.couldNotSerializeJson)
+                    }
                 } catch let error as NSError {
                     completion(nil, "Failed to load: \(error.localizedDescription)")
                 }

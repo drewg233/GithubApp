@@ -38,4 +38,9 @@ struct Constant {
     struct Nib {
         static let gitRepoTableViewCell = "GitRepoTableViewCell"
     }
+    
+    struct ErrorMessage {
+        static let couldNotSerializeJson = "Oops couldn't serialize the response."
+        static let noData = "Data was empty."
+    }
 }

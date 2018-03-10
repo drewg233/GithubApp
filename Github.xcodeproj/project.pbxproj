@@ -17,6 +17,7 @@
 		B9AA8A4420539FFA00CFBE31 /* GitRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AA8A4320539FFA00CFBE31 /* GitRepo.swift */; };
 		B9AA8A492053A04C00CFBE31 /* GitRepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AA8A472053A04C00CFBE31 /* GitRepoTableViewCell.swift */; };
 		B9AA8A4A2053A04C00CFBE31 /* GitRepoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9AA8A482053A04C00CFBE31 /* GitRepoTableViewCell.xib */; };
+		B9AA8A4F2053B37900CFBE31 /* GitSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AA8A4E2053B37900CFBE31 /* GitSection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		B9AA8A4320539FFA00CFBE31 /* GitRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepo.swift; sourceTree = "<group>"; };
 		B9AA8A472053A04C00CFBE31 /* GitRepoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitRepoTableViewCell.swift; sourceTree = "<group>"; };
 		B9AA8A482053A04C00CFBE31 /* GitRepoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GitRepoTableViewCell.xib; sourceTree = "<group>"; };
+		B9AA8A4E2053B37900CFBE31 /* GitSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitSection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				B9AA8A4320539FFA00CFBE31 /* GitRepo.swift */,
+				B9AA8A4E2053B37900CFBE31 /* GitSection.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9AA8A492053A04C00CFBE31 /* GitRepoTableViewCell.swift in Sources */,
+				B9AA8A4F2053B37900CFBE31 /* GitSection.swift in Sources */,
 				B9AA8A4420539FFA00CFBE31 /* GitRepo.swift in Sources */,
 				B9AA8A3020539F3F00CFBE31 /* ViewController.swift in Sources */,
 				B9AA8A2E20539F3F00CFBE31 /* AppDelegate.swift in Sources */,
